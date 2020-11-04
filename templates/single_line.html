@@ -1,209 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title></title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-	<style type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLIB</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-		.audiotable {
-			vertical-align: middle;
-			display: inline-block;
-			list-style: none;
-			line-height: 1em;
-			border-collapse: collapse;
-		}
-		.audiofile {
-			padding-right: 10px;
-		}
-		.audiolink {
-			padding-right: 10px;
-		}
-		.material-icons {
-			vertical-align: middle;
-		}
-		.featcode {
-			word-wrap: break-word;
-		}
-		.nobullet {
-		    list-style: none;
-		}
-	</style>
 </head>
+
 <body>
-	<div class="container">
+  <section class="section_1 container-fluid p-0">
+    <div class="d-flex flex-column">
+      <div>
+        <header>
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="pics\icon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              Pronunciation Practice
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link"
+                    href="https://www.google.com/search?q=pronunciation+ball&rlz=1C1GCEA_enLK880LK880&oq=pronunciation+apple&aqs=chrome..69i57j69i59j0j69i60l2j69i65l2j69i60.23261j0j7&sourceid=chrome&ie=UTF-8">Sample
+                    Pronunciation<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="https://app.speechace.co/placement/course/1">Premium Version(SpeechlAce)
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Purchase Premium Version</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Homes Page</a>
+                </li>
+              </ul>
+            </div>
 
-		<h1>Pronunciation Practice
-		</h1>
+          </nav>
+        </header>
+      </div>
+      <div class="container-fluid text-left heading">
+        <h5>Select a word to pronunce from a specific level:</h5>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Level 1
+                </button>
+              </h2>
+            </div>
 
-		
-		<p><a class="btn btn-info" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-	    	Step 1: Select a word in scope
-	  	</a></p>
-		<div class="collapse" id="collapseExample">
-		  <div class="card card-body">
-		      <div class="row">
-			    <div class="col">
-			      <ul class="nobullet">
-			      	<li> <input type='radio' name='wtd' value='about'> about </li>
-                    <li> <input type='radio' name='wtd' value='afternoon'> afternoon </li>
-                    <li> <input type='radio' name='wtd' value='a'> a </li>
-                    <li> <input type='radio' name='wtd' value='and'> and </li>
-                    <li> <input type='radio' name='wtd' value='an'> an </li>
-                    <li> <input type='radio' name='wtd' value='any'> any </li>
-                    <li> <input type='radio' name='wtd' value='are'> are </li>
-                    <li> <input type='radio' name='wtd' value='because'> because </li>
-                    <li> <input type='radio' name='wtd' value='but'> but </li>
-                    <li> <input type='radio' name='wtd' value='can'> can </li>
-                    <li> <input type='radio' name='wtd' value='come'> come </li>
-                    <li> <input type='radio' name='wtd' value='does'> does </li>
-                    <li> <input type='radio' name='wtd' value='down'> down </li>
-                    <li> <input type='radio' name='wtd' value='drank'> drank </li>
-                    <li> <input type='radio' name='wtd' value='five'> five </li>
-                    <li> <input type='radio' name='wtd' value='for'> for </li>
-                    <li> <input type='radio' name='wtd' value='from'> from </li>
-                    <li> <input type='radio' name='wtd' value='get'> get </li>
-                    <li> <input type='radio' name='wtd' value='go'> go </li>
-                    <li> <input type='radio' name='wtd' value='good'> good </li>
-                    <li> <input type='radio' name='wtd' value='had'> had </li>
-                    <li> <input type='radio' name='wtd' value='has'> has </li>
-                    <li> <input type='radio' name='wtd' value='have'> have </li>
-                    <li> <input type='radio' name='wtd' value='he'> he </li>
-                    <li> <input type='radio' name='wtd' value='here'> here </li>
-                    <li> <input type='radio' name='wtd' value='him'> him </li>
-                    <li> <input type='radio' name='wtd' value='his'> his </li>
-                    <li> <input type='radio' name='wtd' value='i'> i </li>
-                    <li> <input type='radio' name='wtd' value='in'> in </li>
-			      </ul>
-			    </div>
-			    <div class="col">
-			      <ul class="nobullet">
-			      	<li> <input type='radio' name='wtd' value='is'> is </li>
-                    <li> <input type='radio' name='wtd' value='it'> it </li>
-                    <li> <input type='radio' name='wtd' value='just'> just </li>
-                    <li> <input type='radio' name='wtd' value='like'> like </li>
-                    <li> <input type='radio' name='wtd' value='mean'> mean </li>
-                    <li> <input type='radio' name='wtd' value='me'> me </li>
-                    <li> <input type='radio' name='wtd' value='my'> my </li>
-                    <li> <input type='radio' name='wtd' value='no'> no </li>
-                    <li> <input type='radio' name='wtd' value='not'> not </li>
-                    <li> <input type='radio' name='wtd' value='now'> now </li>
-                    <li> <input type='radio' name='wtd' value='of'> of </li>
-                    <li> <input type='radio' name='wtd' value='one'> one </li>
-                    <li> <input type='radio' name='wtd' value='on'> on </li>
-                    <li> <input type='radio' name='wtd' value='or'> or </li>
-                    <li> <input type='radio' name='wtd' value='other'> other </li>
-                    <li> <input type='radio' name='wtd' value='out'> out </li>
-                    <li> <input type='radio' name='wtd' value='people'> people </li>
-                    <li> <input type='radio' name='wtd' value='put'> put </li>
-                    <li> <input type='radio' name='wtd' value='really'> really </li>
-                    <li> <input type='radio' name='wtd' value='right'> right </li>
-                    <li> <input type='radio' name='wtd' value='said'> said </li>
-                    <li> <input type='radio' name='wtd' value='say'> say </li>
-                    <li> <input type='radio' name='wtd' value='see'> see </li>
-                    <li> <input type='radio' name='wtd' value='she'> she </li>
-                    <li> <input type='radio' name='wtd' value='some'> some </li>
-                    <li> <input type='radio' name='wtd' value='so'> so </li>
-                    <li> <input type='radio' name='wtd' value='tea'> tea </li>
-                    <li> <input type='radio' name='wtd' value='that'> that </li>
-                    <li> <input type='radio' name='wtd' value='them'> them </li>
-                    <li> <input type='radio' name='wtd' value='the'> the </li>
-			      </ul>
-			    </div>
-			    <div class="col">
-			      <ul class="nobullet">
-			      	<li> <input type='radio' name='wtd' value='then'> then </li>
-                    <li> <input type='radio' name='wtd' value='there'> there </li>
-                    <li> <input type='radio' name='wtd' value='these'> these </li>
-                    <li> <input type='radio' name='wtd' value='they'> they </li>
-                    <li> <input type='radio' name='wtd' value='think'> think </li>
-                    <li> <input type='radio' name='wtd' value='this'> this </li>
-                    <li> <input type='radio' name='wtd' value='three'> three </li>
-                    <li> <input type='radio' name='wtd' value='time'> time </li>
-                    <li> <input type='radio' name='wtd' value='to'> to </li>
-                    <li> <input type='radio' name='wtd' value='tv'> tv </li>
-                    <li> <input type='radio' name='wtd' value='two'> two </li>
-                    <li> <input type='radio' name='wtd' value='up'> up </li>
-                    <li> <input type='radio' name='wtd' value='very'> very </li>
-                    <li> <input type='radio' name='wtd' value='want'> want </li>
-                    <li> <input type='radio' name='wtd' value='was'> was </li>
-                    <li> <input type='radio' name='wtd' value='watched'> watched </li>
-                    <li> <input type='radio' name='wtd' value='well'> well </li>
-                    <li> <input type='radio' name='wtd' value='we'> we </li>
-                    <li> <input type='radio' name='wtd' value='what'> what </li>
-                    <li> <input type='radio' name='wtd' value='when'> when </li>
-                    <li> <input type='radio' name='wtd' value='where'> where </li>
-                    <li> <input type='radio' name='wtd' value='which'> which </li>
-                    <li> <input type='radio' name='wtd' value='who'> who </li>
-                    <li> <input type='radio' name='wtd' value='will'> will </li>
-                    <li> <input type='radio' name='wtd' value='with'> with </li>
-                    <li> <input type='radio' name='wtd' value='yes'> yes </li>
-                    <li> <input type='radio' name='wtd' value='you'> you </li>
-                    <li> <input type='radio' name='wtd' value='your'> your </li>
-			      </ul>
-			    </div>
-			  </div>
-		  </div>
-		</div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container-fluid text-left heading">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" onclick="selectedWord('about')"
+                      name='wtd' value='about'>
+                    <label class="form-check-label" for="inlineCheckbox1">about</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                      onclick="selectedWord('afternoon')" name='wtd' value='afternoon'>
+                    <label class="form-check-label" for="inlineCheckbox2">afternoon</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('a')"
+                      name='wtd' value='a'>
+                    <label class="form-check-label" for="inlineCheckbox2">a</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('and')"
+                      name='wtd' value='and'>
+                    <label class="form-check-label" for="inlineCheckbox2">and</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('an')"
+                      name='wtd' value='an'>
+                    <label class="form-check-label" for="inlineCheckbox2">an</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('any')"
+                      name='wtd' value='any'>
+                    <label class="form-check-label" for="inlineCheckbox2">any</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('are')"
+                      name='wtd' value='are'>
+                    <label class="form-check-label" for="inlineCheckbox2">are</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                      onclick="selectedWord('because')" name='wtd' value='because'>
+                    <label class="form-check-label" for="inlineCheckbox2">because</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('but')"
+                      name='wtd' value='but'>
+                    <label class="form-check-label" for="inlineCheckbox2">but</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('can')"
+                      name='wtd' value='can'>
+                    <label class="form-check-label" for="inlineCheckbox2">can</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('come')"
+                      name='wtd' value='come'>
+                    <label class="form-check-label" for="inlineCheckbox2">come</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('does')"
+                      name='wtd' value='does'>
+                    <label class="form-check-label" for="inlineCheckbox2">does</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('down')"
+                      name='wtd' value='down'>
+                    <label class="form-check-label" for="inlineCheckbox2">down</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('drank')"
+                      name='wtd' value='drank'>
+                    <label class="form-check-label" for="inlineCheckbox2">drank</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('five')"
+                      name='wtd' value='five'>
+                    <label class="form-check-label" for="inlineCheckbox2">five</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('for')"
+                      name='wtd' value='for'>
+                    <label class="form-check-label" for="inlineCheckbox2">for</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('from')"
+                      name='wtd' value='from'>
+                    <label class="form-check-label" for="inlineCheckbox2">from</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('get')"
+                      name='wtd' value='get'>
+                    <label class="form-check-label" for="inlineCheckbox2">get</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('go')"
+                      name='wtd' value='go'>
+                    <label class="form-check-label" for="inlineCheckbox2">go</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('good')"
+                      name='wtd' value='good'>
+                    <label class="form-check-label" for="inlineCheckbox2">good</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('had')"
+                      name='wtd' value='had'>
+                    <label class="form-check-label" for="inlineCheckbox2">had</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('has')"
+                      name='wtd' value='has'>
+                    <label class="form-check-label" for="inlineCheckbox2">has</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('have')"
+                      name='wtd' value='have'>
+                    <label class="form-check-label" for="inlineCheckbox2">have</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('he')"
+                      name='wtd' value='he'>
+                    <label class="form-check-label" for="inlineCheckbox2">he</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('here')"
+                      name='wtd' value='here'>
+                    <label class="form-check-label" for="inlineCheckbox2">here</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('him')"
+                      name='wtd' value='him'>
+                    <label class="form-check-label" for="inlineCheckbox2">him</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('his')"
+                      name='wtd' value='his'>
+                    <label class="form-check-label" for="inlineCheckbox2">his</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('i')"
+                      name='wtd' value='i'>
+                    <label class="form-check-label" for="inlineCheckbox2">i</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('in')"
+                      name='wtd' value='in'>
+                    <label class="form-check-label" for="inlineCheckbox2">in</label>
+                  </div>
+                  <!-- <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
+                  Level 2
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container-fluid text-left heading">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('is')"
+                      name='wtd' value='is'>
+                    <label class="form-check-label" for="inlineCheckbox2">is</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('it')"
+                      name='wtd' value='it'>
+                    <label class="form-check-label" for="inlineCheckbox2">it</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('just')"
+                      name='wtd' value='just'>
+                    <label class="form-check-label" for="inlineCheckbox2">just</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('like')"
+                      name='wtd' value='like'>
+                    <label class="form-check-label" for="inlineCheckbox2">like</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('mean')"
+                      name='wtd' value='mean'>
+                    <label class="form-check-label" for="inlineCheckbox2">mean</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('me')"
+                      name='wtd' value='me'>
+                    <label class="form-check-label" for="inlineCheckbox2">me</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('my')"
+                      name='wtd' value='my'>
+                    <label class="form-check-label" for="inlineCheckbox2">my</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('no')"
+                      name='wtd' value='no'>
+                    <label class="form-check-label" for="inlineCheckbox2">no</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('not')"
+                      name='wtd' value='not'>
+                    <label class="form-check-label" for="inlineCheckbox2">not</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('now')"
+                      name='wtd' value='now'>
+                    <label class="form-check-label" for="inlineCheckbox2">now</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('of')"
+                      name='wtd' value='of'>
+                    <label class="form-check-label" for="inlineCheckbox2">of</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('one')"
+                      name='wtd' value='one'>
+                    <label class="form-check-label" for="inlineCheckbox2">one</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('on')"
+                      name='wtd' value='on'>
+                    <label class="form-check-label" for="inlineCheckbox2">on</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('or')"
+                      name='wtd' value='or'>
+                    <label class="form-check-label" for="inlineCheckbox2">or</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('other')"
+                      name='wtd' value='other'>
+                    <label class="form-check-label" for="inlineCheckbox2">other</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                      onclick="selectedWord('people')" name='wtd' value='people'>
+                    <label class="form-check-label" for="inlineCheckbox2">people</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('put')"
+                      name='wtd' value='put'>
+                    <label class="form-check-label" for="inlineCheckbox2">put</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                      onclick="selectedWord('really')" name='wtd' value='really'>
+                    <label class="form-check-label" for="inlineCheckbox2">really</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('right')"
+                      name='wtd' value='right'>
+                    <label class="form-check-label" for="inlineCheckbox2">right</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('said')"
+                      name='wtd' value='said'>
+                    <label class="form-check-label" for="inlineCheckbox2">said</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('say')"
+                      name='wtd' value='say'>
+                    <label class="form-check-label" for="inlineCheckbox2">say</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('see')"
+                      name='wtd' value='see'>
+                    <label class="form-check-label" for="inlineCheckbox2">see</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('she')"
+                      name='wtd' value='she'>
+                    <label class="form-check-label" for="inlineCheckbox2">she</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('some')"
+                      name='wtd' value='some'>
+                    <label class="form-check-label" for="inlineCheckbox2">some</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('so')"
+                      name='wtd' value='so'>
+                    <label class="form-check-label" for="inlineCheckbox2">so</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('tea')"
+                      name='wtd' value='tea'>
+                    <label class="form-check-label" for="inlineCheckbox2">tea</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('that')"
+                      name='wtd' value='that'>
+                    <label class="form-check-label" for="inlineCheckbox2">that</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('them')"
+                      name='wtd' value='them'>
+                    <label class="form-check-label" for="inlineCheckbox2">them</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('the')"
+                      name='wtd' value='the'>
+                    <label class="form-check-label" for="inlineCheckbox2">the</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  Level 3
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container-fluid text-left heading">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('then')"
+                      name='wtd' value='then'>
+                    <label class="form-check-label" for="inlineCheckbox2">then</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('there')"
+                      name='wtd' value='there'>
+                    <label class="form-check-label" for="inlineCheckbox2">there</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('these')"
+                      name='wtd' value='these'>
+                    <label class="form-check-label" for="inlineCheckbox2">these</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('they')"
+                      name='wtd' value='they'>
+                    <label class="form-check-label" for="inlineCheckbox2">they</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('think')"
+                      name='wtd' value='think'>
+                    <label class="form-check-label" for="inlineCheckbox2">think</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('this')"
+                      name='wtd' value='this'>
+                    <label class="form-check-label" for="inlineCheckbox2">this</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('three')"
+                      name='wtd' value='three'>
+                    <label class="form-check-label" for="inlineCheckbox2">three</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('time')"
+                      name='wtd' value='time'>
+                    <label class="form-check-label" for="inlineCheckbox2">time</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('then')"
+                      name='wtd' value='then'>
+                    <label class="form-check-label" for="inlineCheckbox2">then</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('to')"
+                      name='wtd' value='to'>
+                    <label class="form-check-label" for="inlineCheckbox2">to</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('tv')"
+                      name='wtd' value='tv'>
+                    <label class="form-check-label" for="inlineCheckbox2">tv</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('two')"
+                      name='wtd' value='two'>
+                    <label class="form-check-label" for="inlineCheckbox2">two</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('up')"
+                      name='wtd' value='up'>
+                    <label class="form-check-label" for="inlineCheckbox2">up</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('very')"
+                      name='wtd' value='very'>
+                    <label class="form-check-label" for="inlineCheckbox2">very</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('want')"
+                      name='wtd' value='want'>
+                    <label class="form-check-label" for="inlineCheckbox2">want</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('was')"
+                      name='wtd' value='was'>
+                    <label class="form-check-label" for="inlineCheckbox2">was</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                      onclick="selectedWord('watched')" name='wtd' value='watched'>
+                    <label class="form-check-label" for="inlineCheckbox2">watched</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('well')"
+                      name='wtd' value='well'>
+                    <label class="form-check-label" for="inlineCheckbox2">well</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('we')"
+                      name='wtd' value='we'>
+                    <label class="form-check-label" for="inlineCheckbox2">we</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('what')"
+                      name='wtd' value='what'>
+                    <label class="form-check-label" for="inlineCheckbox2">what</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('when')"
+                      name='wtd' value='when'>
+                    <label class="form-check-label" for="inlineCheckbox2">when</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('where')"
+                      name='wtd' value='where'>
+                    <label class="form-check-label" for="inlineCheckbox2">where</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('which')"
+                      name='wtd' value='which'>
+                    <label class="form-check-label" for="inlineCheckbox2">which</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('who')"
+                      name='wtd' value='who'>
+                    <label class="form-check-label" for="inlineCheckbox2">who</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('will')"
+                      name='wtd' value='will'>
+                    <label class="form-check-label" for="inlineCheckbox2">will</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('with')"
+                      name='wtd' value='with'>
+                    <label class="form-check-label" for="inlineCheckbox2">with</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('yes')"
+                      name='wtd' value='yes'>
+                    <label class="form-check-label" for="inlineCheckbox2">yes</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('you')"
+                      name='wtd' value='you'>
+                    <label class="form-check-label" for="inlineCheckbox2">you</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" onclick="selectedWord('your')"
+                      name='wtd' value='your'>
+                    <label class="form-check-label" for="inlineCheckbox2">your</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid text-left heading top-buffer-stopBtn">
+        <h5>The word selected to pronunce:</h5>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="prompt_text" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="container-fluid text-center heading audiotable">
+        <a href="#pronunce"><button type="button" class="btn btn-success btn-circle btn-circle btn-xl btn-rec">Start
+            Recording</button></a>
+        <a
+          href="https://www.google.com/search?q=pronunciation+ball&rlz=1C1GCEA_enLK880LK880&oq=pronunciation+apple&aqs=chrome..69i57j69i59j0j69i60l2j69i65l2j69i60.23261j0j7&sourceid=chrome&ie=UTF-8bit"><button
+            type="button" class="btn btn-primary btn-circle btn-circle btn-xl ">Check</button></a>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid p-0 section 2 top-buffer" id="pronunce">
+    <div class="Team d-flex flex-column text-center">
+      <div class="d-sm-flex flex-row">
+        <h4>Pronunce the word</h4>
+        <div>
+          <img src="pics\ZChAX.gif" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center top-buffer-stopBtn audiotable">
+      <a href="#results"><button type="button" class="btn btn-danger btn-circle btn-circle btn-xl btn-stop">Stop
+          Recording</button> </a>
+    </div>
+  </section>
+  <section class="container-fluid p-0 section 3 top-buffer-results" id="results">
+    <div class="Team d-flex flex-column text-center top-buffer-stopBtn">
+      <h4>Confident Score Prediction</h4>
+      <div class="flex-wrapper">
+        <div class="single-chart container-fluid">
+          <svg viewBox="0 0 36 36" class="circular-chart green">
+            <path class="circle-bg" d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="20.35" class="percentage">0%</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="Team d-flex flex-column text-center top-buffer-phonemeResults">
+      <div class="card">
+        <h5 class="card-header">Phoneme Results</h5>
+        <div class="card-body">
+          <p class="card-text card-text-phoneme"></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="pics\icon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+          Pronunciation Practice
+        </a>
+      </nav>
+    </div>
+  </section>
 
-		<p><a class="badge badge-success" target="_blank" href="https://github.com/brijmohan/pocketsphinx.js">Feature extraction (details)</a> <a class="badge badge-success" target="_blank" href="https://github.com/brijmohan/proneval-service">Intelligibility service details (Keras on WMF)</a></p>
+  <div id="status"></div>
 
-
-		<ul>
-
-		<li>
-			<table class="audiotable">
-				<tbody>
-				<tr>
-					<td class="unicode audiolink"><input type="text" id="prompt_text" placeholder="Word to decode" readonly></td>
-					<td class="audiofile">
-						<audio controls="controls" src="En-uk-to_read.ogg.ogx">
-						  Your browser does not support the <code>audio</code> element.
-						</audio>
-					</td>
-				</tr>
-
-					<tr>
-					<td>Try saying: 
-						<button type="button" class="btn btn-primary btn-rec"> (2) Record <i class="material-icons">fiber_manual_record</i></button>
-						<canvas class="meter" height="35px" width="25px"></canvas>
-						<button type="button" data-word="because" class="btn btn-default btn-stop"> (3) Stop <i class="material-icons">stop</i></button>
-						<!--<button type="button" class="btn btn-default btn-play">Play <i class="material-icons">play_arrow</i></button>
-						<button type="button" class="btn btn-default btn-eq">Evaluate <i class="material-icons">equalizer</i></button>
-						<button type="button" class="btn btn-default btn-say">Say in phrase <i class="material-icons">insert_link</i></button>-->
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</li>
-
-
-		</ul>
-
-		<div id="status"></div>
-	</div>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    function selectedWord(word) {
+      document.getElementById("prompt_text").value = word;
+    }
+  </script>
+  <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="static/js/keras.js"></script>
+  <script type="text/javascript" src="static/js/proneval.js"></script>
+  <script type="text/javascript" src="static/js/common.js"></script>
 </body>
 
-<!-- JAVASCRIPT -->
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-<script type="text/javascript">
-	$(function () {
-	  $('[data-toggle="tooltip"]').tooltip();
-	  $('[name="wtd"]').change(function(ele) {
-	    console.log(this.value);
-	    $("#prompt_text").val(this.value);
-	  });
-	});
-</script>
-
-<script type="text/javascript" src="{{ url_for('static', filename='js/keras.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/proneval.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}"></script>
 </html>
-
-
-
-
