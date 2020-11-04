@@ -82,7 +82,7 @@ getScripts(dependencies, function() {
         renderQuickRCDialog();
       });
 
-      $("#prompt_text").tooltip({'container': 'body', 'title': 'Enter a phrase or select a word to decode from step 1.', 'placement': 'bottom'});
+      //$("#prompt_text").tooltip({'container': 'body', 'title': 'Enter a phrase or select a word to decode from step 1.', 'placement': 'bottom'});
     });
     
     $(document).ready( function() {
@@ -100,7 +100,7 @@ getScripts(dependencies, function() {
                       ff.push(e.data.feats[ii].toFixed(2) + "");
                     }
 
-                    updateStatus("<code class='featcode'> feats ==> " + ff.toString() + " </code>");
+                    updatephoneme("<code class='featcode'> feats ==> " + ff.toString() + " </code>");
                     get_intelligibility_score(e.data.feats, e.data.word);
                   }
                   
@@ -163,7 +163,7 @@ getScripts(dependencies, function() {
       function get_intelligibility_score(feats, word) {
         var service_url = "https://tools.wmflabs.org/proneval-gsoc17/pronserv";
         //var service_url = "http://localhost:5555/pronserv";
-        updateStatus('Getting intelligibility score...');
+        //updateStatus('Getting intelligibility score...');
         
         // SENDING REQUEST TO SERVER
         /*
@@ -178,8 +178,9 @@ getScripts(dependencies, function() {
 
         // SENDING FEATS TO LOCAL KERAS.JS MODELS
         get_local_prediction(feats, word).then(function(pred) {
-          console.log(pred);
-          updateStatus("<pre><code> " + JSON.stringify(pred, null, 4) + "</code></pre>");
+          var precen = pred[0].pred;
+          var totalPrecentage = (Number(precen)*100);
+          updatePercentage(totalPrecentage);
         });
       }
       
@@ -326,8 +327,9 @@ getScripts(dependencies, function() {
       // This starts recording. We first need to get the id of the grammar to use
       var startRecording = function(targetEle) {
         var decode_word = $.trim($('#prompt_text').val());
+        //var decode_word = document.getElementById("prompt_text").value;
         if (decode_word != ""){
-          $("#prompt_text").tooltip('hide');
+          //$("#prompt_text").tooltip('hide');
           console.log(decode_word);
           if (recorder) recorder.record();
           clearStatus();
@@ -339,7 +341,7 @@ getScripts(dependencies, function() {
         else {
           // raise tooltip
           console.log("No decode word");
-          $("#prompt_text").tooltip('show');
+          //$("#prompt_text").tooltip('show');
         }
       };
   
@@ -347,7 +349,7 @@ getScripts(dependencies, function() {
     var stopRecording = function(evt) {
       recorder && recorder.stop();
         createDownloadLink(evt);
-        //var decode_word = $(evt.target).parents('td').find('.btn-stop').data('word');
+        //var decode_word = $(evt.target).parents('td').find('.txt_text').data('word');
         var decode_word = $('#prompt_text').val();
         console.log("Decode==>", decode_word);
         recorder.getBuffer(function(buf){
@@ -454,6 +456,26 @@ getScripts(dependencies, function() {
         console.log(newStatus);
         var old_status = $('div#status').html();
         $('div#status').html(old_status + '<br><br>' + newStatus);
+    }
+
+    function updatePercentage(newStatus){
+        $('.percentage').html(newStatus+"%");
+        var total = newStatus+", 100";
+
+
+        var path1 = "<path class='circle-bg' d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 0a 15.9155 15.9155 0 0 1 0 -31.831' />";
+        var path2 = "<path class='circle' stroke-dasharray='";
+        var path3 = parseInt(newStatus) +", 100'";
+        var path4 = " d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831' />";
+        var path5 = "<text x='18' y='20.35' class='percentage'>";
+        var path6 = newStatus + "%";
+        var path7 = "</text>";
+        $(".circular-chart").html(path1 + path2 + path3 + path4 + path5 + path6+ path7 );
+        
+    }
+
+    function updatephoneme(newStatus) {
+      $('.card-text-phoneme').html(newStatus);
     }
 
     function clearStatus() {
